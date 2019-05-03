@@ -1,0 +1,41 @@
+version: '3.2'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    expose:
+      - 6379
+
+  web1:
+    depends_on:
+      - redis
+    build: .
+    volumes:
+      - .:/web
+    links:
+      - redis
+    environment:
+      - REDIS_URL=redis
+
+  web2:
+    depends_on:
+      - redis
+    build: .
+    volumes:
+      - .:/web
+    links:
+      - redis
+    environment:
+      - REDIS_URL=redis
+
+  loadbalancer:
+    depends_on:
+      - web1
+      - web2
+    build: .docker/load-balancer
+    links:
+      - web1
+      - web2
+    ports:
+      - "81:80"
+      - "443:443"
