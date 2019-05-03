@@ -1,6 +1,6 @@
 ## Docker Environment for use with Craft or Laravel Projects
 
-```** This documentation is work in progress and may not be complete. I will be addeding more documentation on how things work next week.```
+```** This documentation is work in progress and may not be complete. I will be adding more documentation on how things work next week.```
 
 ### Introduction
 
@@ -22,7 +22,7 @@ docker-compose to build up a multi server application sitting behind
 a load balancer and using redis as a caching environment for session handling
 
 Docker is cross platform but any examples given are based on Docker for 
-Windows and using git bash as the CLI
+Windows and using git bash as the CLI.
 
 ### Docker File
 
@@ -121,7 +121,7 @@ The running container is called ```slave```.  You can SSH into it using.
 You will have to do this in a new gitbash window as the window used the run 
 the container will be outputting the logs.
  
- > If you are using Mac Os or Linux you won't need to use the initial winpty 
+ > If you are using Mac Os or Linux you won't need to use the initial ```winpty```
  (as this is only require under a Windows environment)
 
 Pressing ```Control ^C``` will exit the running Docker container and stop it 
@@ -131,8 +131,8 @@ Pressing ```Control ^C``` will exit the running Docker container and stop it
 
 The shell ```run.sh``` command will spool up a single container running 
 your application. If you require something a little more advanced then 
-`docker compose` can be used to spool up a ```Nginx``` load balancer, ```2 front``` 
-end web servers and a ```redis``` server to handle session management.
+`docker compose` can be used to spool up a ```Nginx``` load balancer, ```2 front end```
+web servers and a ```redis``` server to handle session management.
 
 > We are not going to tell you how to configure your site to use ```redis``` as this 
 is easily documented in whatever cms/framework you are using. 
